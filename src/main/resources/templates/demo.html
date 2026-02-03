@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Thymeleaf</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: #1f2937; }
+        .info { background-color: #f0f9ff; padding: 15px; border-radius: 5px; }
+        p { margin: 10px 0; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${message}">Welcome Thymeleaf!</h1>
+        
+        <div class="info" th:object="${student}">
+            <p><strong>ID:</strong> <span th:text="*{id}">1</span></p>
+            <p><strong>Tên sinh viên:</strong> <span th:text="*{name}">Nguyễn Văn A</span></p>
+        </div>
+
+        <p><a th:href="@{/}">Quay lại trang chủ</a></p>
+    </div>
+</body>
+</html>
